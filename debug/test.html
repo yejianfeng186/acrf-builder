@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>acrf-builder test</title>
+    <!-- <script src="../dist/xpt2json.iife.js"></script> -->
+    <!-- <script src="../index.js"></script> -->
+    <script src="../dist/acrf-builder.js"></script>
+  </head>
+  <body>
+    <p>
+      <input
+        class="style_file_content"
+        accept=".mcrf"
+        type="file"
+        id="upload_file_id"
+      />
+    </p>
+    <p>
+      <input
+        class="style_file_content"
+        accept=".json"
+        type="file"
+        id="upload_refer_id"
+      />
+      <button onclick="getFile()">parse</button>
+    </p>
+    <button onclick="getResult()">build</button>
+    <p id="demo">Callback</p>
+  </body>
+  <script>
+    var arr=[];
+    let feedback = document.getElementById("demo");
+    function getFile() {
+      let uploadFile = document.getElementById("upload_file_id");
+      let uploadFile1 = document.getElementById("upload_refer_id");
+      
+      
+      let tree = {};
+      // reader.readAsText(uploadFile.files[0], "binary");
+
+      // let fileRead = uploadFile.files[0];
+      // let fileRead1 = uploadFile1.files[0];
+      let files = [uploadFile.files[0], uploadFile1.files[0]];
+      console.log(files);
+      for (let i = 0; i < files.length; i++) {
+        // console.log(i);
+        let file=files[i];
+        let reader = new FileReader();
+        // reader.readAsBinaryString(file);
+        // reader.readAsArrayBuffer([uploadFile.files[0],uploadFile1.files[0]]);
+        reader.readAsText(file, "UTF-8");
+        reader.onload = (res) => {
+          // console.log(res.target.result);
+          // feedback.innerHTML = res.target.result;
+
+          arr.push(res.target.result);
+          feedback.innerHTML=arr.length;
+          //   try {
+          // console.log(parseXmlString(res.target.result));
+          // console.log(res.target.result);
+          // let xmlFile = xpt2json.readXpt(res.target.result);
+
+          // let readSas7bdat=sas7bdat2json.sas7bdat2json();
+          // let xmlFile = sas7bdat2json.readSas7bdat(res, fileRead.name, {
+          //   encoding: "gbk",
+          // });
+          // console.log(xmlFile);
+          // feedback.innerHTML = JSON.stringify(xmlFile);
+        };
+      }
+      
+    }
+    function getResult()
+    { 
+      let tree = builder.buildTree(JSON.parse(arr[0]), JSON.parse(arr[1]));
+      let element = builder.getElement(tree);
+      feedback.innerHTML=tree;
+    }
+  </script>
+</html>

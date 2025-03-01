@@ -1,0 +1,56 @@
+[
+	{
+		"CDASHDOM": [
+			"SUB"
+		],
+		"CDASHTYPE": "SANOFI",
+		"CDASHVAR": "ENRID",
+		"CLASS": "question",
+		"CRFCODELAB": null,
+		"CRFDES": "Subject Enrollment ID",
+		"CRFDOM": "SUB",
+		"CRFDS": "SUB_ID",
+		"CRFDSLAB": "Subject Identifier",
+		"CRFOD": 1,
+		"CRFVALUT": "",
+		"CRFVAR": "ENRID",
+		"CRFVAROD": 1,
+		"CRFVERS": "V1.0_LIVE_09DEC2024",
+		"HEIGHT": 15.744,
+		"ID": 1,
+		"NONCOL": true,
+		"NOTSUB": true,
+		"NOTSUBPAGE": true,
+		"PAGENUMBER": 1,
+		"TIPS": "DOMAIN:undefined; Variable:undefined; Not Submit:undefined; NOTE:undefined;",
+		"WIDTH": 108.54,
+		"X": 70.866,
+		"Y": 678.671
+	},
+	{
+		"CDASHDOM": [
+			"SUB"
+		],
+		"CDASHTYPE": "SANOFI",
+		"CDASHVAR": "SUBJID",
+		"CLASS": "question",
+		"CRFCODELAB": null,
+		"CRFDES": "Subject Identifier for the Study",
+		"CRFDOM": "SUB",
+		"CRFDS": "SUB_ID",
+		"CRFDSLAB": "Subject Identifier",
+		"CRFOD": 1,
+		"CRFVALUT": "",
+		"CRFVAR": "ENRID",
+		"CRFVAROD": 2,
+		"CRFVERS": "V1.0_LIVE_09DEC2024",
+		"HEIGHT": 15.744,
+		"ID": 2,
+		"SDTMDOM":["VU"],
+		"SDTMVAR":["VUSTART"],
+		"PAGENUMBER": 1,
+		"WIDTH": 149.172,
+		"X": 70.866,
+		"Y": 661.671
+	}
+]
